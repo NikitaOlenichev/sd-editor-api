@@ -1,0 +1,89 @@
+{
+ "projects": [
+  {
+   "id": 1,
+   "name": "Демо-проект",
+   "description": "Создан при запуске"
+  }
+ ],
+ "diagrams": [
+  {
+   "id": 1,
+   "project_id": 1,
+   "version": 1,
+   "updated_at": "2026-10-26T16:33:10.490028+00:00",
+   "name": "Авторизация",
+   "participants": [
+    {
+     "name": "Пользователь",
+     "type": "actor",
+     "position": 0,
+     "id": 1
+    },
+    {
+     "name": "Сервер",
+     "type": "control",
+     "position": 1,
+     "id": 2
+    },
+    {
+     "name": "БД",
+     "type": "database",
+     "position": 2,
+     "id": 3
+    }
+   ],
+   "fragments": [
+    {
+     "type": "alt",
+     "condition": "логин верный",
+     "parent_id": null,
+     "seq_order": 0,
+     "id": 1
+    }
+   ],
+   "messages": [
+    {
+     "source_id": 1,
+     "target_id": 2,
+     "type": "sync",
+     "label": "login()",
+     "fragment_id": null,
+     "seq_order": 0,
+     "id": 1
+    },
+    {
+     "source_id": 2,
+     "target_id": 3,
+     "type": "sync",
+     "label": "findUser()",
+     "fragment_id": null,
+     "seq_order": 1,
+     "id": 2
+    },
+    {
+     "source_id": 3,
+     "target_id": 2,
+     "type": "reply",
+     "label": "user",
+     "fragment_id": null,
+     "seq_order": 2,
+     "id": 3
+    },
+    {
+     "source_id": 2,
+     "target_id": 1,
+     "type": "reply",
+     "label": "token",
+     "fragment_id": 1,
+     "seq_order": 3,
+     "id": 4
+    }
+   ]
+  }
+ ],
+ "next_id": {
+  "project": 1,
+  "diagram": 1
+ }
+}
